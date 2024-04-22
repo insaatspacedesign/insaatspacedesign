@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <link id="link"   rel="shortcut icon" href="/img/logo.jpeg" type="image/x-icon">
+    <title>Residential(insaat)</title>
+    <style>
+      .navbar{
+            /* padding-top: 0rem; */
+            /* padding-bottom: 0rem; */
+            padding-right: 2rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+
+
+         #logotag{
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+          animation: moveText 6s ;
+          position: absolute;
+          top:30%;
+         margin-left: 65px;
+}
+        @keyframes moveText {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 4%; /* Move text out to the right */
+  }
+  100% {
+    left: 0.9%; /* Move text back to the left */
+  }
+}
+
+.hide{
+  display: none;
+}
+        .interiorcard {
+            text-align: center;
+            cursor: pointer;
+            padding: 2px;
+        }
+ 
+        .interiorcard img {
+            height: 180px;
+        }
+
+        .interiorcard:hover {
+            box-shadow: 2px 2px 7px 5px black;
+            transform: scale(0.9);
+        }
+
+        body{
+            overflow-x: hidden;
+            
+        }
+
+            /* styles for Residential Interior */
+
+        @media (min-width: 801px) {
+            /* For screens larger than 801px (tab) */
+           
+            .resint {
+                width: 100vw; /* Adjust the width as needed */
+                height: 100%;
+                max-width: none;
+                margin-left: -13.5vw;
+                margin-right: -13.5vw;
+
+            }
+            .resint .resintbod {
+                display: flex;
+            }
+
+            .resimgmain {
+                flex: 3.9;
+                object-fit: cover;
+            }
+
+            .resimgmain img {
+                height: 100% !important;
+                width: 155% !important;
+                
+            }
+
+            .resint .resintbod .cardresint {
+                flex: 1.4;
+                height: 100%;
+                margin-left: 5px;
+            }
+            .cardresint img{
+                height: 80px;
+            }
+            .sessbutt{
+                width: 180px;
+            }
+        }
+        @media (min-width: 1200px) {
+            /* For screens larger than 1200px (lap view) */
+            .resint {
+                width: 80vw; /* Adjust the width as needed */
+                height: 83.5vh;
+                max-width: none;
+                margin-left: -18.5vw; 
+                margin-right: -18.5vw;
+            }
+
+            .resint .resintbod {
+                display: flex;
+            }
+
+            .resimgmain {
+                flex: 3.9;
+                object-fit: cover;
+            }
+
+            .resimgmain img {
+                height: 73vh !important;
+                width: 99% !important;
+                
+            }
+
+            .resint .resintbod .cardresint {
+                flex: 1.4;
+                height: 100%;
+            }
+            .cardresint img{
+                height: 68px;
+            }
+            .sessbutt{
+                width: 180px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            /* For screens smaller than 800px (mobile size) */
+            .resint {
+                width: 99%;
+                height: 100%;
+                max-width: none;
+            }
+
+            .resint .resintbod {
+                flex-direction: column;
+                
+            }
+
+            .resimgmain img {
+                height: 30vh !important;
+                width: 100% !important;
+            }
+
+            .resint .resintbod .resimgmain,
+            .resint .resintbod .cardresint {
+                width: 100%; /* Take full width on mobile */
+                margin-left: 0; /* Remove left margin on mobile */
+                
+            }
+            .cardresint img{
+                width: 100%;
+                height: 70px;
+                
+            }
+            .sessbutt{
+                width: 180px;
+            }
+        }
+        #subbut{
+            text-align: center;
+        }
+        .cardresint img:hover{
+            cursor: grab;
+        }
+        #resideninter{
+            overflow-x: hidden;
+        }
+
+        /* residential exterior starts here */
+        .image-container {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s;
+    }
+
+    .image-container:hover {
+      transform: scale(1.05);
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px;
+      display: none;
+      transition: opacity 0.5s;
+    }
+
+    .image-container:hover .image-caption {
+      opacity: 0;
+    }
+
+    .image-caption-heading {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .image-container:hover .image-caption-heading {
+      opacity: 1;
+    }
+
+    #modalImage {
+      width: 100%;
+      height: auto;
+      margin: auto;
+      display: block;
+      border-radius: 8px;
+      transition: transform 0.5s;
+      
+    }
+
+    #modalImage:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-content {
+      animation: fadeIn 0.5s;
+    }
+
+    .modal-body{
+        text-align: center;
+    }
+
+    @media (min-width: 1000px) {
+      #modalCaption {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: 30%;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        padding: 15px;
+        opacity: 0;
+        transition: opacity 0.5s, transform 0.5; 
+        height:auto;
+      }
+
+      #modalImage {
+      margin-left: 0;
+      height: 70vh;
+      }
+      .modal-body:hover #modalCaption {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .contact-popup{
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px 5px rgba(0,0,0,0.1);
+   transition: top 0ms ease-in-out 300ms ;
+  transition: opacity 300ms ease-in-out;
+  transition: margin-top 300ms ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .contact-popup {
+      width: 90%; /* Adjust the width for smaller screens */
+  }
+}
+
+body{
+  transition: filter 0ms ease-in-out 0ms;
+
+}
+.submit-btn{
+  text-align: center;
+}
+.contact-popup .close-button{
+  position: absolute;
+  top: 7px;
+  right: 30px;
+  width: 30px;
+  height: 32px;
+  background: #eee;
+  color: #111;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body.active-popup{
+  overflow: hidden;
+}
+.main{
+  transition: filter 0ms ease-in-out 300ms;
+
+}
+body.active-popup .main{
+  filter: blur(5px);
+  background: rgba(0,0,0,0.08);
+  transition: filter 0ms ease-in-out 0ms;
+}
+body.active-popup .contact-popup{
+  top: 50%;
+  opacity: 1;
+  margin-top: auto;
+  transition: top 0ms ease-in-out 0ms ;
+  transition: opacity 300ms ease-in-out;
+  transition: margin-top 300ms ease-in-out;
+
+}
+.whatsapp-icon {
+            position: fixed;
+            bottom: 15px;
+            right: 10px; /* Adjust the right distance as needed */
+            background-color: rgb(63, 175, 11);
+            border-right: none;
+            border-radius: 60px;
+            width: 50px;
+            height: 50px;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        .whatsapp-icon:hover {
+            background-color: #4a8c4c; /* Change color on hover */
+        }
+
+        /* Book a design style  */
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  margin: 0;
+}
+.book-session {
+  max-width: 800px; /* Set a maximum width for the container */
+  width: 100%;
+  padding: 15px;
+}
+
+form {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .book-session {
+      max-width: 100%; /* Full width on small screens */
+  }
+}
+/* back to top style */
+.navbar1{
+  text-align: center;
+  height: 48px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-top:8px ;
+}
+#subbtn{
+ 
+  justify-content: center;
+}
+/* style for fb insta linkedin */
+.navbarend{
+  height: 70px;
+ text-align: center;
+ padding-top: 20px;
+}
+
+#colend{
+  background-color: black;
+  margin: 0px;
+ padding-top: 20px;
+ padding-bottom: 20px;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+    
+    </style>
+</head>
+
+<body>
+  <div class="main" id="Backtotop">
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: black;">
+      <div class="container-fluid" id="ticker-container">
+          <a class="navbar-brand" href="index.html" >
+              <img src="/img/insaat.jpg" alt="logo" width="53" height="55" class="logo  d-inline-block align-top" style="border-radius: 480px;"> 
+             <p id="logotag" style="color: #F0E3D1;">Insaat Space Design</p>
+              <!-- <span class="d-inline-block align-middle">INSAAT</span> -->
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="justify-content:right;">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html" style="color: #F0E3D1;"> <span style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Home</span></a>
+            </li>
+
+            <div class="dropdown">
+              <button class="nav-link active dropdown-toggle" style="background-color: black; margin: 0;border: none; color: white;" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                <span style="font-size: 18px; color: #F0E3D1;  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Design lobby</span>
+              </button>
+              <ul class="dropdown-menu" style="margin-top: 18px;color: white; " >
+                <li><a class="dropdown-item" href="Residential.html"><h6>Residential</h6></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="Commercial.html"><h6>Commercial</h6></a></li>
+              </ul>
+            </li> 
+            </div>
+           
+          
+            <li class="nav-item">
+              <a class="nav-link active" href="#" style="color: #F0E3D1;" onclick="openContactPopup(event)"> <span style="font-size: 18px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Contact</span></a>
+            </li>
+          </ul>
+          
+        </div>
+        
+  </div>
+</nav>
+  
+  <!-- the first carousel starts her guyz -->
+  
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://cdn.pixabay.com/photo/2016/06/24/10/47/house-1477041_1280.jpg" class="d-block w-100" alt="...">
+           <div class="carousel-caption d-none d-md-block" style="color: black;">
+               
+            <h5 style="color: white;">Residential</h5>
+            
+          </div>
+        </div>
+        
+      </div>
+  </div>
+
+
+
+
+    <!-- the residential interior works (cards) start here -->
+    <div id="resideninter">
+    <h2 id="targetrow1" class="mt-3" style="text-align: center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Residential
+        (Interior)</h2>
+
+   
+    <br>
+
+    <div  class="row row-cols-2 row-cols-md-4 g-4">
+        <div class="col">
+            <div  class="interiorcard" id="card1" onclick="showCardModal1('card1')">
+                <img src="Residential/kitchen/IMG_3075.JPG" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Modular Kitchen</h5>
+                    <p class="card-text">Elevate Your Culinary Experience with Our Sleek Modular Kitchen Designs</p>
+                </div>
+            </div>
+        </div> 
+
+        <div class="col">
+            <div class="interiorcard" id="card2" onclick="showCardModal2('card2')">
+                <img src="Residential/wardrobe/IMG_0698.JPG" class="card-img-top"
+                    alt="errr">
+                <div class="card-body">
+                    <h5 class="card-title">Wardrobe</h5>
+                    <p class="card-text">Experience Luxury Every Day: Step into Our Exquisite Wardrobe Designs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="interiorcard" id="card3" onclick="showCardModal3('card3')">
+                <img src="Residential/poojaroom/IMG_3065.JPG" class="card-img-top"
+                    alt="errr">
+                <div class="card-body">
+                    <h5 class="card-title">Pooja Room</h5>
+                    <p class="card-text">Crafted with Faith, Designed with Love: Elevate Your Home with Our Pooja Room Designs</p>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="interiorcard" id="card4" onclick="showCardModal4('card4')">
+                <img src="Residential/tvunit/IMG_1908.JPG" class="card-img-top"
+                    alt="errr">
+                <div class="card-body">
+                    <h5 class="card-title">Tv Unit</h5>
+                    <p id="targetrow2" class="card-text">Where Style Meets Functionality: Elevate Your TV Viewing Experience with Our Premium TV Units</p>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="interiorcard" id="card5" onclick="showCardModal5('card5')">
+                <img src="Residential/livingroom/IMG_1905.JPG" class="card-img-top"
+                    alt="errr">
+                <div class="card-body">
+                    <h5 class="card-title">Living Room</h5>
+                    <p class="card-text">Find Your Perfect Retreat: Unveil the Beauty and Comfort of Our Living Room Creations</p>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="interiorcard" id="card6" onclick="showCardModal6('card6')">
+                <img src="Residential/falseceiling/IMG_8240.JPG" class="card-img-top"
+                    alt="errr">
+                <div class="card-body">
+                    <h5 class="card-title">False Ceiling</h5>
+                    <p class="card-text">Unleash Your Creativity: Design a Unique Atmosphere with Our Custom False Ceiling Options</p>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="interiorcard" id="card7" onclick="showCardModal7('card7')">
+                <img src="Residential/studytable/IMG_0936.JPG" class="card-img-top"
+                    alt="errr">
+                <div class="card-body">
+                    <h5 class="card-title">Study Table</h5>
+                    <p class="card-text">Designed for Productivity, Built for Durability: Discover Our Range of Study Tables Today</p>
+                </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="interiorcard" id="card8" onclick="showCardModal8('card8')">
+                <img src="Residential/bedroom/IMG_0705.JPG" class="card-img-top"
+                    alt="errr">
+                <div class="card-body">
+                    <h5 class="card-title">Bed Room</h5>
+                    <p id="resexterior" class="card-text">From Restful Nights to Refreshing Mornings: Find Your Ideal Bedroom Setting with Us</p>
+                </div>
+            </div>
+          </div>
+        <!-- Add more card sections here -->
+    </div>
+ </div>
+
+
+
+ 
+    <br >
+
+
+
+
+    <!-- Dynamic Modals -->
+    <div id="cardModals"></div>
+
+        <!-- residential exterior starts here -->
+
+        <h2  class="mt-0" style="text-align: center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Residential
+            (Exterior)</h2>
+    
+        
+        <br>
+    
+    
+    <div class="container mt-2">
+      <div class="row">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="image-container">
+            <img src="https://img.freepik.com/premium-photo/modern-luxury-home-architects-villa-exterior-design-picture-ai-generated-art_848903-2703.jpg" alt="Image 1" class="img-fluid">
+            <div class="image-caption-heading"><h4>Title</h4></div>
+            <div class="image-caption"><h3>Title heading</h3>
+            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+            <div id="subbut">
+                <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-3 col-6 mb-4">
+            <div class="image-container">
+              <img src="https://media.istockphoto.com/id/589538090/photo/exterior-of-small-american-house-with-blue-paint.jpg?s=612x612&w=0&k=20&c=bg1x9nUvyhBRtWpuETh-2NDnSOzehq6OsxU5dAE_1bc=" alt="Image 1" class="img-fluid">
+              <div class="image-caption-heading"><h4>Title heading</h4></div>
+              <div class="image-caption"><h3>Title heading</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+              <div id="subbut">
+                  <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-6 mb-4">
+            <div class="image-container">
+              <img src="https://dogk5k0c5kg4s.cloudfront.net/web/images/articles/image_2021-08-05-191341.jpeg?mtime=20210805151342&focal=none" alt="Image 1" class="img-fluid">
+              <div class="image-caption-heading"><h4>Title heading</h4></div>
+              <div class="image-caption"><h3>Title heading</h3>
+              <p style="line-height: 34px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+              <div id="subbut">
+                  <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-6 mb-4">
+            <div class="image-container">
+              <img src="https://static.asianpaints.com/content/dam/asianpaintsbeautifulhomes/202209/20-exterior-house-designs/title-exterior-house-design.jpg" alt="Image 1" class="img-fluid">
+              <div class="image-caption-heading"><h4>Title heading</h4></div>
+              <div class="image-caption"><h3>Title heading</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+              <div id="subbut">
+                  <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-6 mb-4">
+            <div class="image-container">
+              <img src="https://patch.com/img/cdn/users/3437632/stock/raw/20150755a3d492116fb.jpg" alt="Image 1" class="img-fluid">
+              <div class="image-caption-heading"><h4>Title heading</h4></div>
+              <div class="image-caption"><h3>Title heading</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+              <div id="subbut">
+                  <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-6 mb-4">
+            <div class="image-container">
+              <img src="https://www.futuristarchitecture.com/wp-content/uploads/2022/04/entrance-to-a-small-private-house.jpg" alt="Image 1" class="img-fluid">
+              <div class="image-caption-heading"><h4>Title heading</h4></div>
+              <div class="image-caption"><h3>Title heading</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+              <div id="subbut">
+                  <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-6 mb-4">
+            <div class="image-container">
+              <img src="https://tonearme.com/images/thumbs/000/0001521_Simple%20House%20Designs%20%C3%A2%E2%82%AC%E2%80%9C%20Exterior%20Designs%20for%20Your%20Home_1350.jpeg" alt="Image 1" class="img-fluid">
+              <div class="image-caption-heading"><h4>Title heading</h4></div>
+              <div class="image-caption"><h3>Title heading</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+              <div id="subbut">
+                  <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-6 mb-4">
+            <div class="image-container">
+              <img src="https://i.pinimg.com/736x/78/94/a9/7894a903123be589a588978eaf478c63.jpg" alt="Image 1" class="img-fluid">
+              <div class="image-caption-heading"><h4>Title heading</h4></div>
+              <div class="image-caption"><h3>Title heading</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sapiente nemo cupiditate veniam beatae provident pariatur sunt laudantium. Earum, aperiam.</p>
+              <div id="subbut">
+                  <button type="button" class="btn btn-dark mt-2" onclick="openContactPopup(event,imageModal)">Book Design Session</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <!-- Add more images with captions as needed -->
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="imageModalLabel">Image Title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="" alt="Modal Image" id="modalImage" class="img-fluid">
+            <div id="modalCaption" class="mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- whatsapp icon api -->
+    <a href="https://api.whatsapp.com/send?phone=9080374781&text=Hi%20there!" target="_blank" class="btn whatsapp-icon-container whatsapp-icon">
+      <svg width="34" height="34" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d_1560_289)"><path fill-rule="evenodd" clip-rule="evenodd" d="M55.2484 10.7518C49.61 5.11334 42.1064 2 34.115 2C17.6444 2 4.25849 15.4003 4.24414 31.8565C4.24414 37.1219 5.62147 42.2582 8.23266 46.7776L6.00024 60.2583L19.8395 58.1119C24.2011 60.4935 29.1078 61.7418 34.115 61.7418H34.1294C50.5856 61.7418 63.9859 48.3415 64.0002 31.8852C64.0002 23.8938 60.8869 16.3902 55.2484 10.7518ZM34.1294 56.6915C29.6674 56.6915 25.2915 55.4864 21.4895 53.2339L20.5856 52.703L12.1882 54.1707L13.6989 46.0172L13.1107 45.0846C10.6286 41.1392 9.3087 36.5624 9.3087 31.8709C9.3087 18.1836 20.4565 7.05021 34.1437 7.05021C40.7721 7.05021 47.0132 9.63271 51.6903 14.3242C56.3819 19.0158 58.9644 25.2568 58.95 31.8852C58.9357 45.5581 47.8022 56.6915 34.1294 56.6915ZM47.7449 38.1119C46.9988 37.7389 43.3259 35.9311 42.6516 35.6872C41.9629 35.4433 41.4751 35.3142 40.973 36.0603C40.4708 36.8063 39.0505 38.4849 38.6057 38.9871C38.1753 39.4892 37.7305 39.5466 36.9845 39.1736C36.2384 38.8006 33.8281 38.0115 30.9873 35.472C28.7635 33.4921 27.2714 31.0531 26.841 30.307C26.4106 29.561 26.7979 29.1593 27.171 28.7862C27.501 28.4562 27.917 27.911 28.2901 27.4806C28.6631 27.0502 28.7922 26.7346 29.0361 26.2324C29.28 25.7303 29.1652 25.2999 28.9787 24.9268C28.7922 24.5538 27.3001 20.8809 26.6832 19.3888C26.0806 17.9397 25.4637 18.1263 25.0045 18.1119C24.5741 18.0832 24.072 18.0832 23.5698 18.0832C23.0677 18.0832 22.2642 18.2697 21.5756 19.0158C20.8869 19.7618 18.9644 21.5696 18.9644 25.2425C18.9644 28.8712 21.5692 32.3739 21.9915 32.9418C21.9967 32.9488 22.0015 32.9552 22.006 32.9613C22.379 33.4634 27.2714 40.9957 34.7606 44.2238C36.5397 44.9986 37.9314 45.4577 39.0218 45.802C40.8152 46.3759 42.4364 46.2898 43.7276 46.1033C45.1624 45.8881 48.1466 44.2956 48.7635 42.5595C49.3804 40.8235 49.3804 39.3171 49.1939 39.0158C48.9787 38.6714 48.4909 38.4849 47.7449 38.1119Z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M34.1294 56.6915C29.6674 56.6915 25.2915 55.4864 21.4895 53.2339L20.5856 52.703L12.1882 54.1707L13.6989 46.0172L13.1107 45.0846C10.6286 41.1392 9.3087 36.5624 9.3087 31.8709C9.3087 18.1836 20.4565 7.05021 34.1437 7.05021C40.7721 7.05021 47.0132 9.63271 51.6903 14.3242C56.3819 19.0158 58.9644 25.2568 58.95 31.8852C58.9357 45.5581 47.8022 56.6915 34.1294 56.6915ZM42.6516 35.6872C43.3259 35.9311 46.9988 37.7389 47.7449 38.1119C48.4909 38.4849 48.9787 38.6714 49.1939 39.0158C49.3804 39.3171 49.3804 40.8235 48.7635 42.5595C48.1466 44.2956 45.1624 45.8881 43.7276 46.1033C42.4364 46.2898 40.8152 46.3759 39.0218 45.802C37.9314 45.4577 36.5397 44.9986 34.7606 44.2238C27.2714 40.9957 22.379 33.4634 22.006 32.9613L21.9915 32.9418C21.5692 32.3739 18.9644 28.8712 18.9644 25.2425C18.9644 21.5696 20.8869 19.7618 21.5756 19.0158C22.2642 18.2697 23.0677 18.0832 23.5698 18.0832C24.072 18.0832 24.5741 18.0832 25.0045 18.1119C25.4637 18.1263 26.0806 17.9397 26.6832 19.3888C27.3001 20.8809 28.7922 24.5538 28.9787 24.9268C29.1652 25.2999 29.28 25.7303 29.0361 26.2324C28.7922 26.7346 28.6631 27.0502 28.2901 27.4806C27.917 27.911 27.501 28.4562 27.171 28.7862C26.7979 29.1593 26.4106 29.561 26.841 30.307C27.2714 31.0531 28.7635 33.4921 30.9873 35.472C33.8281 38.0115 36.2384 38.8006 36.9845 39.1736C37.7305 39.5466 38.1753 39.4892 38.6057 38.9871C39.0505 38.4849 40.4708 36.8063 40.973 36.0603C41.4751 35.3142 41.9629 35.4433 42.6516 35.6872Z" fill="url(#paint0_linear_1560_289)"></path></g><defs><filter id="filter0_d_1560_289" x="0.244141" y="0" width="67.7561" height="67.7418" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix><feOffset dy="2"></feOffset><feGaussianBlur stdDeviation="2"></feGaussianBlur><feComposite in2="hardAlpha" operator="out"></feComposite><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"></feColorMatrix><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1560_289"></feBlend><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1560_289" result="shape"></feBlend></filter><linearGradient id="paint0_linear_1560_289" x1="34.1222" y1="7.57679" x2="34.1222" y2="54.6696" gradientUnits="userSpaceOnUse"><stop stop-color="#57D163"></stop><stop offset="1" stop-color="#23B33A"></stop></linearGradient></defs></svg>
+    </a>
+
+    <!-- book a session -->
+<div class="centered-container">
+  <div class="book-session">
+      <h2 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" class="text-center">Book A Design Session</h2>
+      <form action="https://formspree.io/f/xkndnqwq" method="post" class="row g-3">
+          <div class="col-md-lg-5">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" id="name">
+          </div>
+          <div class="col-md-lg-5">
+              <label for="contact" class="form-label">Contact Number</label>
+              <input type="text" class="form-control" name="contact" id="contact">
+          </div>
+          <div class="col-md-lg-10">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="email">
+          </div>
+          <div class="col-md-lg-10">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" name="description" id="description" rows="4"></textarea>
+          </div>
+          <div class="col-md-lg-5 submit-btn">
+              <button style=" background-color: black; color:#F0E3D1;" id="subbtn" type="submit" class="btn" >Submit</button>
+          </div>
+      </form>
+  </div>
+</div>
+  </div>
+
+  <!-- back to top navbar starts here broo ! -->
+
+  <nav class="navbar1 navbar-expand-lg navbar-dark mt-3" style="background-color: black;">
+    <div class="container-md">
+      <a class="navbar-brand" href="index.html#Backtotop"  style="color: #F0E3D1; ">Back to Top</a>
+    </div>
+  </nav>
+
+
+<!-- the end starts here bro ! -->
+<nav class="navbarend navbar-dark bg-dark" style="background-color: #F0E3D1; ">
+<div class="container-fluid">
+  <a class="navbar-brand" href="index.html">
+    <img src="https://cdn-icons-png.flaticon.com/128/4614/4614488.png" alt="" width="30" height="24" class="d-inline-block align-text">
+    Insaat
+  </a>
+
+  
+<!-- instagram -->
+  <a class="navbar-brand" href="https://www.instagram.com/insaat_space_design?igsh=Y3pveDFtNmpvNDl5">
+    <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="" width="30" height="26" class="d-inline-block align-text">
+    
+  </a>
+<!-- facebook -->
+  <a class="navbar-brand" href="https://www.instagram.com/insaat_space_design?igsh=Y3pveDFtNmpvNDl5">
+    <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="" width="30" height="25" class="d-inline-block align-text">
+    
+  </a>
+<!-- linkdln -->
+  <a class="navbar-brand" href="https://www.instagram.com/insaat_space_design?igsh=Y3pveDFtNmpvNDl5">
+    <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="" width="30" height="29" class="d-inline-block align-text">
+    
+  </a>
+</div>
+</nav>
+
+
+
+
+
+<div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4" id="colend" >
+  <div class="col" id="colend">
+  <a href="index.html" style="text-decoration: none;color:  #F0E3D1;">Home</a> <br>
+  <a href="Residential.html" style="text-decoration: none;color:  #F0E3D1;">Residential</a> <br>
+  <a href="Commercial.html" style="text-decoration: none;color:  #F0E3D1;">Commercial (exterior)</a> <br>
+  <a href="Residential.html#resinterior" style="text-decoration: none;color:  #F0E3D1;">Residential (Interior)</a> <br>
+  <a href="Residential.html#resexterior" style="text-decoration: none;color:  #F0E3D1;">Residential (exterior)</a> <br>
+  </div>
+
+
+  <div class="col" id="colend">
+    <a href="index.html#whyinsaat" style="text-decoration: none;color:  #F0E3D1;">Why Insaat</a> <br>
+    <a href="index.html#features" style="text-decoration: none;color:  #F0E3D1;">Features</a> <br>
+    <a href="index.html#projects" style="text-decoration: none;color:  #F0E3D1;">Projects</a> <br>
+    <a href="index.html#cities" style="text-decoration: none;color:  #F0E3D1;">Working cities</a> <br>
+    <a href="index.html#designsession" style="text-decoration: none;color:  #F0E3D1;">Design Session</a> <br>
+    </div>
+
+    <div class="col" id="colend">
+      <a href="index.html#booksession" style="text-decoration: none;color:  #F0E3D1;">Book Session</a> <br>
+      <a href="index.html#thingsininsaat" style="text-decoration: none;color:  #F0E3D1;">Things in Insaat</a> <br>
+      <a href="Residential.html#targetrow1" style="text-decoration: none;color:  #F0E3D1;">Modular Kitchen</a> <br>
+      <a href="Residential.html#targetrow1" style="text-decoration: none;color:  #F0E3D1;">Wardrobe</a> <br>
+      <a href="Residential.html#targetrow1" style="text-decoration: none;color:  #F0E3D1;">Pooja Room</a> <br>
+      </div>
+
+      <div class="col" id="colend">
+        <a href="Residential.html#targetrow1" style="text-decoration: none;color:  #F0E3D1;">Tv Unit</a> <br>
+        <a href="Residential.html#targetrow2" style="text-decoration: none;color:  #F0E3D1;">Living Room</a> <br>
+        <a href="Residential.html#targetrow2" style="text-decoration: none;color:  #F0E3D1;">False Ceiling</a> <br>
+        <a href="Residential.html#targetrow2" style="text-decoration: none;color:  #F0E3D1;">Study Table</a> <br>
+        <a href="Residential.html#targetrow2" style="text-decoration: none;color:  #F0E3D1;">Bedroom</a> <br>
+        </div>
+
+  <!-- dont write anything after this -->
+  <div class="contact-popup">
+    <button class="close-button" onclick="closeContactPopup()">&times;</button>
+   
+    <form action="https://formspree.io/f/xkndnqwq" method="post" class="row g-3">
+     <div class="col-md-lg-5">
+       <label for="name" class="form-label">Name</label>
+       <input type="text" class="form-control" name="name" id="name">
+     </div>
+     <div class="col-md-lg-5">
+       <label for="contact" class="form-label"> Contact Number</label>
+       <input type="text" class="form-control" name="contact" id="number">
+     </div>
+     <div class="col-md-lg-10">
+       <label for="email" class="form-label">Email</label>
+       <input type="email" class="form-control" name="email" id="email">
+     </div>
+     <div class="col-md-lg-10">
+       <label for="description" class="form-label">Description</label>
+       <textarea class="form-control" name="description" id="description" rows="4"></textarea>
+     </div>
+     
+     
+     <div class="col-md-lg-5 submit-btn" >
+       <button id="subbtn" type="submit" class="btn btn-dark">Submit</button>
+     </div>
+   </form>
+   </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+    </script>
+        <script src="Residential.js">
+        </script>
+
+        <!-- navbar -->
+        <script>
+          const navbarToggler = document.querySelector(".navbar-toggler");
+        const logotag = document.getElementById("logotag");
+        
+        // Add event listener to the navbar toggler
+        navbarToggler.addEventListener("click", function() {
+            // Toggle the visibility of the logotag
+            logotag.classList.toggle("hide");
+        });
+        
+        
+        </script>
+
+</body>
+
+</html>
